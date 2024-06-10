@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Login]">
+  <test name="DesignerLogin">
+    <classes>
+      <class name="shop.moda.automation.web.DesignerLogin"/>
+    </classes>
+  </test> <!-- DesignerLogin -->
+  <test name="CustomerSignUp">
+    <classes>
+      <class name="shop.moda.automation.web.CustomerSignUp"/>
+    </classes>
+  </test> <!-- CustomerSignUp -->
+  <test name="CustomerLogin">
+    <classes>
+      <class name="shop.moda.automation.web.CustomerLogin"/>
+    </classes>
+  </test> <!-- CustomerLogin -->
+  <test name="DesignerLogin(failed)">
+    <classes>
+      <class name="shop.moda.automation.web.CustomerSignUp">
+        <methods>
+          <include name="initEnvironment"/>
+        </methods>
+      </class> <!-- CustomerSignUp -->
+      <class name="shop.moda.automation.web.CustomerLogin">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="initEnvironment"/>
+        </methods>
+      </class> <!-- CustomerLogin -->
+      <class name="shop.moda.automation.web.DesignerLogin">
+        <methods>
+          <include name="initEnvironment"/>
+          <include name="closeBrowser"/>
+          <include name="designerLoginCombination"/>
+        </methods>
+      </class> <!-- DesignerLogin -->
+    </classes>
+  </test> <!-- DesignerLogin(failed) -->
+</suite> <!-- Failed suite [Login] -->
